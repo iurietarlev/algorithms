@@ -13,12 +13,12 @@ int main(){
 
     //linear search
     cout << "Using linear search the position of number " << number
-         << " is: ";
+        << " is: ";
     cout << linear_search(number, list, length) << endl;
 
     //binary search
     cout << "Using binary search the position of number " << number
-         << " is: "; 
+        << " is: "; 
     cout << binary_search(number, list, 0, length - 1) << endl; 
     return 0;
 }
@@ -34,9 +34,9 @@ int linear_search(int number, int* a, int length){
 
 int binary_search(int number, int* a, int low, int high){
     int mid = (low+high)/2;
-   
+
     if(low > high) return -1;
-    
+
     if(a[mid] == number)
         return mid;
     else if(number < a[mid])

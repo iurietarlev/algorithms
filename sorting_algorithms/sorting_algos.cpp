@@ -4,37 +4,37 @@ using namespace std;
 
 /*-----------  SELECTION SORTING ALGORITHM --------- */
 void selection_sort(int list[], int length){
-	if(length <= 1)
-		return;
+    if(length <= 1)
+        return;
 
-	int min_val = list[0];
+    int min_val = list[0];
     int min_val_index;
 
     for(int i = 0; i < length; i++){
-       min_val = min(min_val, list[i]);
-       if(min_val == list[i])
-           min_val_index = i;
+        min_val = min(min_val, list[i]);
+        if(min_val == list[i])
+            min_val_index = i;
     }
 
-	//change places of min val and first item	
+    //change places of min val and first item	
     int temp = *list;
     *list = min_val; 
     *(list+min_val_index) = temp; 
-     
+
     selection_sort(list+1, length - 1);
 }
 /*----------- BUBBLE SORTING ALGORITHM --------- */
 void bubble_sort(int * list, int length){
-	for(int j = 0; j < length; j++){
-		for(int i = 0; i < length - 1; i++){
-			if(min(list[i], list[i+1]) == list[i+1]){
-				int temp = list[i];
-				list[i] = list[i+1];
-				list[i+1] = temp;
-			}
-		}
-		length--;
-	}
+    for(int j = 0; j < length; j++){
+        for(int i = 0; i < length - 1; i++){
+            if(min(list[i], list[i+1]) == list[i+1]){
+                int temp = list[i];
+                list[i] = list[i+1];
+                list[i+1] = temp;
+            }
+        }
+        length--;
+    }
 }
 
 /*----------- INSERTION SORTING ALGORITHM --------- */
@@ -57,7 +57,7 @@ void merge_sort(int* a, int low, int high){
     {
         //split the data in two halves
         mid = (low+high)/2;
-        
+
         merge_sort(a, low, mid);
         merge_sort(a, mid+1, high);
 
@@ -108,12 +108,12 @@ void merge(int* a, int low, int high, int mid){
 void print_int_list(int list[], int length){
     for(int i = 0; i < length; i++){
         cout << *(list+i) << "  ";
-	}
-	cout << endl;
+    }
+    cout << endl;
 }
 
 //copies elements of one array over to another one
 void copy_int_list(int* list, int length, int* list_copy){
-	for(int i = 0; i < length; i++)
-		list_copy[i] = list[i];
+    for(int i = 0; i < length; i++)
+        list_copy[i] = list[i];
 }
