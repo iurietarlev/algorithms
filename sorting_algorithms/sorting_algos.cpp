@@ -117,19 +117,3 @@ void copy_int_list(int* list, int length, int* list_copy){
 	for(int i = 0; i < length; i++)
 		list_copy[i] = list[i];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
